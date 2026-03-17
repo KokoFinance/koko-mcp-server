@@ -53,7 +53,7 @@ Add to your MCP settings file:
 }
 ```
 
-## Tools (7)
+## Tools (8)
 
 | Tool | Description |
 |------|-------------|
@@ -63,9 +63,10 @@ Add to your MCP settings file:
 | `calculate_card_value` | Annual fee break-even analysis with first-year and ongoing value |
 | `optimize_portfolio` | Portfolio health score, per-card KEEP/OPTIMIZE/CANCEL verdicts (<100ms) |
 | `recommend_card_for_category` | Best card to use for a specific spending category, ranked by reward value (<100ms) |
+| `check_card_renewal` | Should you renew this card? Verdict + downgrade/replacement options |
 | `create_mcp_session` | Session tracking for multi-query conversations |
 
-## Prompts (3)
+## Prompts (4)
 
 Pre-built conversation starters that guide the AI through structured workflows:
 
@@ -74,6 +75,7 @@ Pre-built conversation starters that guide the AI through structured workflows:
 | `portfolio-review` | Full portfolio analysis with health score and verdicts | `card_names`, `monthly_spending` (optional) |
 | `which-card` | Find the best card for a specific purchase | `card_names`, `category`, `amount` (optional) |
 | `new-card-finder` | Search for a new card matching your criteria | `spending_focus`, `annual_fee_limit` (optional), `credit_score` (optional) |
+| `renewal-check` | Walk through a card renewal decision step by step | `card_name`, `annual_fee` (optional) |
 
 ## Example Conversations
 
@@ -94,7 +96,7 @@ Pre-built conversation starters that guide the AI through structured workflows:
 
 ## Also Available
 
-- **[Claude Code Plugin](https://github.com/madanc/koko-credit-card-plugin)** — Adds the MCP server connection plus an Agent Skill that teaches Claude structured credit card workflows
+- **[Claude Code Plugin](https://github.com/KokoFinance/koko-credit-card-plugin)** — Adds the MCP server connection plus an Agent Skill that teaches Claude structured credit card workflows
 
 ## License
 
