@@ -61,7 +61,7 @@ Add to your MCP settings file:
 | `compare_cards` | Side-by-side comparison of 2-3 cards with fees, rewards, net value, and break-even (<100ms) |
 | `get_card_details` | Full details for a specific card (fees, rewards, benefits) |
 | `calculate_card_value` | Annual fee break-even analysis with first-year and ongoing value |
-| `optimize_portfolio` | Portfolio health score, per-card KEEP/OPTIMIZE/CANCEL verdicts (<100ms) |
+| `optimize_portfolio` | Portfolio health score, per-card KEEP/OPTIMIZE/CANCEL verdicts. Accepts optional `point_balances` (<100ms) |
 | `recommend_card_for_category` | Best card to use for a specific spending category, ranked by reward value (<100ms) |
 | `check_card_renewal` | Should you renew this card? Verdict + downgrade/replacement options |
 | `create_mcp_session` | Session tracking for multi-query conversations |
