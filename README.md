@@ -61,9 +61,9 @@ Add to your MCP settings file:
 | `compare_cards` | Side-by-side comparison of 2-3 cards with fees, rewards, net value, and break-even (<100ms) |
 | `get_card_details` | Full details for a specific card (fees, rewards, benefits) |
 | `calculate_card_value` | Annual fee break-even analysis with first-year and ongoing value |
-| `optimize_portfolio` | Portfolio health score, per-card KEEP/OPTIMIZE/CANCEL verdicts. Accepts optional `point_balances` (<100ms) |
+| `optimize_portfolio` | Portfolio health score, per-card KEEP/OPTIMIZE/CANCEL verdicts. Accepts optional `point_balances` and `benefit_selections` (<100ms) |
 | `recommend_card_for_category` | Best card to use for a specific spending category, ranked by reward value (<100ms) |
-| `check_card_renewal` | Should you renew this card? Verdict + downgrade/replacement options |
+| `check_card_renewal` | Should you renew this card? Verdict + downgrade/replacement options. Accepts optional `benefit_selections` |
 | `create_mcp_session` | Session tracking for multi-query conversations |
 
 ## Prompts (4)
@@ -77,6 +77,18 @@ Pre-built conversation starters that guide the AI through structured workflows:
 | `new-card-finder` | Search for a new card matching your criteria | `spending_focus`, `annual_fee_limit` (optional), `credit_score` (optional) |
 | `renewal-check` | Walk through a card renewal decision step by step | `card_name`, `annual_fee` (optional) |
 
+## Benefit Selections
+
+The `optimize_portfolio` and `check_card_renewal` tools accept a `benefit_selections` parameter — a list of individual benefit keys the user actually uses. Selected benefits count at 100% utilization; unselected benefits count at 0%.
+
+```
+benefit_selections: ["uber", "airline_fee", "dining", "admirals_club"]
+```
+
+This gives accurate net-value calculations instead of the default 50% utilization estimate.
+
+**Discover valid keys** by calling the REST endpoint `GET https://kokofinance.net/api/v1/benefit-categories` (no auth required), or see the [developer docs](https://kokofinance.net/developers.html#benefit-categories).
+
 ## Example Conversations
 
 **"Review my portfolio"**
@@ -87,6 +99,9 @@ Pre-built conversation starters that guide the AI through structured workflows:
 
 **"Find me a new card"**
 > I spend a lot on travel and dining. I want a card under $300 annual fee with a good sign-up bonus. What do you recommend?
+
+**"Should I renew my Amex Platinum?"**
+> I only use the Uber credit and airline fee credit on my Amex Platinum. Is it still worth paying the $695 annual fee?
 
 ## Links
 
