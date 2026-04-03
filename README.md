@@ -53,7 +53,7 @@ Add to your MCP settings file:
 }
 ```
 
-## Tools (8)
+## Tools (11)
 
 | Tool | Description |
 |------|-------------|
@@ -65,6 +65,9 @@ Add to your MCP settings file:
 | `recommend_card_for_category` | Best card to use for a specific spending category, ranked by reward value (<100ms) |
 | `check_card_renewal` | Should you renew this card? Verdict + downgrade/replacement options. Accepts optional `benefit_selections` |
 | `create_mcp_session` | Session tracking for multi-query conversations |
+| `which_card_at_merchant` | Best card from your portfolio at a specific merchant. Auto-detects spending category (e.g. Starbucks → dining) and ranks by reward value |
+| `check_merchant_benefits` | Check if any cards have credits at a merchant (e.g. Saks → Amex Platinum $100 credit). Includes earning recommendation |
+| `get_card_benefits` | All credits/benefits for a card with value, frequency, schedule, and conditions |
 
 ## Prompts (4)
 
@@ -102,6 +105,15 @@ This gives accurate net-value calculations instead of the default 50% utilizatio
 
 **"Should I renew my Amex Platinum?"**
 > I only use the Uber credit and airline fee credit on my Amex Platinum. Is it still worth paying the $695 annual fee?
+
+**"Which card at Starbucks?"**
+> I'm buying coffee at Starbucks. I have a Chase Sapphire Reserve, Amex Gold, and Citi Double Cash. Which card earns the most?
+
+**"Do I have any credits at Saks?"**
+> I'm shopping at Saks Fifth Avenue. Do any of my cards have credits there? I have an Amex Platinum and Chase Sapphire Reserve.
+
+**"What benefits does my Amex Platinum have?"**
+> Show me all the credits and benefits on my Amex Platinum card — how much is each worth?
 
 ## Links
 
