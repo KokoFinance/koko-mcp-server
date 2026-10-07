@@ -4,7 +4,7 @@ A hosted MCP server for AI-powered credit card advice. Search 100+ US credit car
 
 **Server URL:** `https://kokofinance.net/mcp/`
 
-No API key required. No local installation needed. Just connect your MCP client.
+No local installation needed. [Sign up free at kokofinance.net](https://kokofinance.net) — 250 calls included, no credit card required — then connect your MCP client below using Google sign-in.
 
 ## Quick Setup
 
@@ -255,7 +255,7 @@ Screenshots captured from Claude using the KoKo Finance MCP server.
 
 KoKo Finance collects minimal data required to operate the MCP server:
 
-- **Authentication data**: Google OAuth profile (name, email) when you sign in. No sign-in is required for free-tier usage.
+- **Authentication data**: Google OAuth profile (name, email) when you sign in, or an API key if you authenticate that way instead.
 - **Usage logs**: Tool name, parameters, success/failure status, and timestamp for each MCP tool call. Used for rate limiting and service improvement.
 - **No third-party sharing**: We do not sell or share personal data with third parties.
 - **Data retention**: Usage logs are retained for service operation. You can request deletion by contacting us.
